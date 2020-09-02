@@ -1,7 +1,7 @@
 <template>
   <div :class="rootClass">
     <ul :class="`${rootClass}__wrapper`">
-      <li v-for="(dataImage, index) in dataImagesLocal" :key="index" :class="`${rootClass}__item`">
+      <li v-for="(dataImage, index) in dataImagesLocal" :key="index" :class="`${rootClass}__item`" :title="dataImage.title">
         <div
           :class="classThumbnail(singleSelected.id, dataImage.id, dataImage.disabled)"
           @click="onSelectImage(dataImage)"
@@ -11,6 +11,7 @@
             :src="dataImage.src"
             :alt="dataImage.alt"
             :id="dataImage.id"
+
             :height="h"
             :width="w"
             :class="`${rootClass}__img`"
